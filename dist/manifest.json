@@ -1,7 +1,7 @@
 {
-  "name": "提示词管理",
-  "short_name": "提示词管理",
-  "description": "高效管理和复用AI提示词模板",
+  "name": "提示词库",
+  "short_name": "提示词库",
+  "description": "高效管理和复用AI提示词",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#001529",
