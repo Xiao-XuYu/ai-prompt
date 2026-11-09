@@ -30,17 +30,22 @@
     <!-- 主题：首屏内联解析（浅色/暗色/跟随系统），避免 React 挂载前闪烁 -->
     <script>
       (function () {
-        var mode = 'system';
+        var mode = 'light';
         try {
           var raw = localStorage.getItem('app-settings');
           if (raw) {
             var parsed = JSON.parse(raw);
-            if (parsed && (parsed.themeMode === 'light' || parsed.themeMode === 'dark')) {
+            if (
+              parsed &&
+              (parsed.themeMode === 'light' ||
+                parsed.themeMode === 'dark' ||
+                parsed.themeMode === 'system')
+            ) {
               mode = parsed.themeMode;
             }
           }
         } catch (e) {
-          /* localStorage 不可用时退回跟随系统 */
+          /* localStorage 不可用时退回浅色 */
         }
         var resolved =
           mode === 'system'
@@ -55,8 +60,8 @@
         if (meta) meta.content = resolved === 'dark' ? '#1c1c1e' : '#f2f2f7';
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-WdHLPH9j.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-KuNhih8w.css">
+    <script type="module" crossorigin src="./assets/index-C2vUf6h9.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-aep-pzHk.css">
   </head>
   <body>
     <div id="root"></div>
